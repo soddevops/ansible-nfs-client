@@ -1,9 +1,9 @@
 ---
 # tasks file for ansible-nfs-client
-- include_tasks: debian.yml
+- ansible.builtin.include_tasks: debian.yml
   when: ansible_os_family == "Debian"
 
-- include_tasks: redhat.yml
+- ansible.builtin.include_tasks: redhat.yml
   when: ansible_os_family == "RedHat"
 
-- import_tasks: config.yml
+- ansible.builtin.import_tasks: config.yml
