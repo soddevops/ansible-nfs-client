@@ -1,8 +1,8 @@
 ---
 - name: config | Mounting NFS Exports
-  mount:
+  ansible.posix.mount:
     fstype: "{{ item['fstype'] }}"
-    opts: "{{ (item['opts']|join(','))|default(omit) }}"
+    opts: "{{ (item['opts'] | join(',')) | default(omit) }}"
     path: "{{ item['path'] }}"
     src: "{{ item['src'] }}"
     state: "{{ item['state'] }}"
